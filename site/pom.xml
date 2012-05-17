@@ -2,11 +2,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-	<groupId>org.cishell</groupId>
-	<artifactId>parent</artifactId>
-	<version>0.0.1</version>
+		<groupId>org.cishell</groupId>
+		<artifactId>parent</artifactId>
+		<version>0.0.1</version>
 	</parent>
-	<artifactId>site</artifactId>
+	<artifactId>cishell-doc</artifactId>
 	<modules>
 		<module>..</module>
 	</modules>
@@ -21,21 +21,34 @@
 					<reportPlugins>
 						<plugin>
 							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-javadoc-plugin</artifactId>
-							<version>2.7</version>
-						</plugin>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
 							<artifactId>maven-jxr-plugin</artifactId>
 							<version>2.3</version>
 							<configuration>
 								<aggregate>true</aggregate>
 							</configuration>
 						</plugin>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-project-info-reports-plugin</artifactId>
+							<version>2.4</version>
+						</plugin>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-javadoc-plugin</artifactId>
+							<version>2.7</version>
+							<configuration>
+								<links>
+									<link>http://www.osgi.org/javadoc/r4v43/cmpn/</link>
+									<link>http://www.osgi.org/javadoc/r4v43/core/</link>
+									<link>http://docs.oracle.com/javase/6/docs/api/</link>
+									<link>http://help.eclipse.org/indigo/nftopic/org.eclipse.platform.doc.isv/reference/api/</link>
+								</links>
+							</configuration>
+						</plugin>
 					</reportPlugins>
 				</configuration>
 			</plugin>
-			
+
 		</plugins>
 	</build>
 </project>
